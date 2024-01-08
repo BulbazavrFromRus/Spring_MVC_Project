@@ -2,7 +2,7 @@ package com.bulbazavr.spring.mvc;
 
 public class Employee {
     private String name;
-    private String surName;
+    private String surname;
     private String department;
     private int salary;
 
@@ -17,12 +17,12 @@ public class Employee {
         this.name = name;
     }
 
-    public String getSurName() {
-        return surName;
+    public String getSurname() {
+        return surname;
     }
 
-    public void setSurName(String surName) {
-        this.surName = surName;
+    public void setSurname(String surName) {
+        this.surname = surName;
     }
 
     public String getDepartment() {
@@ -45,7 +45,7 @@ public class Employee {
     public String toString() {
         return "Employee{" +
                 "name='" + name + '\'' +
-                ", surName='" + surName + '\'' +
+                ", surName='" + surname + '\'' +
                 ", department='" + department + '\'' +
                 ", salary=" + salary +
                 '}';
