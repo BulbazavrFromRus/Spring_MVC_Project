@@ -3,12 +3,14 @@ package com.bulbazavr.spring.mvc;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 
 
 @Controller
@@ -47,14 +49,15 @@ public class MyController {
     }*/
 
     @RequestMapping("/showDetails")
-    public String showEmpDetails(@ModelAttribute("employee") Employee emp) {
+    public String showEmpDetails(@Valid @ModelAttribute("employee") Employee emp, BindingResult bindingResult) {
 
-        String name = emp.getName();
-        emp.setName("Mr "+emp);
 
-        int salary = emp.getSalary();
-        emp.setSalary(salary*10);
+        System.out.println("Employee surname " +emp.getSurname().length());
 
+      if(bindingResult.hasErrors()){
+          return "ask-emp-details-view";
+      }
+      else
         return "show-emp-details-view";
     }
 

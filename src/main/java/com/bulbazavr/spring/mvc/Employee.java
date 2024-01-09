@@ -1,16 +1,32 @@
 package com.bulbazavr.spring.mvc;
 
+import com.bulbazavr.spring.mvc.validation.CheckEmail;
+
+import javax.validation.constraints.*;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Employee {
+    @Size(min=2, message="name must be min 2 symbols")
     private String name;
+
+    /*@NotEmpty(message = "surname is required field")*/
+    @NotBlank(message = "surname is required field")
     private String surname;
     private String department;
+
+    @Min(value = 500, message = "must be grater than 499")
+    @Max(value=1000, message = "must be less then 1001")
     private int salary;
 
     private String carBrand;
     private String[] languages;
+
+    @Pattern(regexp = "\\d{3}-\\d{2}-\\d{2}", message = "please use pattern XXX-XX-XX")
+    private String phoneNumber;
+
+    @CheckEmail(value ="abc.com", message = "email must ends with abx.com" )
+    private String email;
 
 
 
@@ -110,6 +126,22 @@ public class Employee {
 
     public void setMapLanguages(Map<String, String> mapLanguages) {
         this.mapLanguages = mapLanguages;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     @Override
