@@ -27,8 +27,25 @@ form:form=""
 
 </form:select>
     <br>
-    
-    
+
+    Which car do you want?
+    <%--BMW <form:radiobutton path="carBrand" value="BMW"/>
+    Mersedes <form:radiobutton path="carBrand" value="Mersedes"/>
+    Ferrari <form:radiobutton path="carBrand" value="Ferrari"/>
+--%>
+    <form:radiobuttons path="carBrand" items="${employee.mapCarBrand}"/>
+
+    <br><br>
+    Foreign language(s)
+   <%-- EN <form:checkbox path="languages" value="English"/>
+    FR <form:checkbox path="languages" value="Franche"/>
+    RU <form:checkbox path="languages" value="Russian"/>
+--%>
+    <form:checkboxes path="languages" items="${employee.mapLanguages}"/>
+
+
+
+
     <input type="submit" value = "OK">
 
 </form:form>

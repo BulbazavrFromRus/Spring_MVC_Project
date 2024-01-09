@@ -9,13 +9,35 @@ public class Employee {
     private String department;
     private int salary;
 
+    private String carBrand;
+    private String[] languages;
+
+
+
     private Map<String, String> mapDepartments;
+    private Map<String, String> mapCarBrand;
+    private Map<String, String> mapLanguages;
+
+
+
+
 
     public Employee() {
         mapDepartments= new HashMap<>();
         mapDepartments.put("IT", "Information Technology");
         mapDepartments.put("HR", "Human Resources");
         mapDepartments.put("Sales", "Sales");
+
+
+        mapCarBrand = new HashMap<>();
+        mapCarBrand.put("BMW", "BMW");
+        mapCarBrand.put("Mercedes", "Mercedes");
+        mapCarBrand.put("Ferrari", "Ferrari");
+
+        mapLanguages = new HashMap<>();
+        mapLanguages.put("EN", "English");
+        mapLanguages.put("FR", "France");
+        mapLanguages.put("RU", "Russian");
     }
 
     public String getName() {
@@ -56,6 +78,38 @@ public class Employee {
 
     public void setMapDepartments(Map<String, String> mapDepartments) {
         this.mapDepartments = mapDepartments;
+    }
+
+    public String getCarBrand() {
+        return carBrand;
+    }
+
+    public void setCarBrand(String carBrand) {
+        this.carBrand = carBrand;
+    }
+
+    public Map<String, String> getMapCarBrand() {
+        return mapCarBrand;
+    }
+
+    public void setMapCarBrand(Map<String, String> mapCarBrand) {
+        this.mapCarBrand = mapCarBrand;
+    }
+
+    public String[] getLanguages() {
+        return languages;
+    }
+
+    public void setLanguages(String[] languages) {
+        this.languages = languages;
+    }
+
+    public Map<String, String> getMapLanguages() {
+        return mapLanguages;
+    }
+
+    public void setMapLanguages(Map<String, String> mapLanguages) {
+        this.mapLanguages = mapLanguages;
     }
 
     @Override
