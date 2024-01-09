@@ -1,12 +1,21 @@
 package com.bulbazavr.spring.mvc;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Employee {
     private String name;
     private String surname;
     private String department;
     private int salary;
 
+    private Map<String, String> mapDepartments;
+
     public Employee() {
+        mapDepartments= new HashMap<>();
+        mapDepartments.put("IT", "Information Technology");
+        mapDepartments.put("HR", "Human Resources");
+        mapDepartments.put("Sales", "Sales");
     }
 
     public String getName() {
@@ -39,6 +48,14 @@ public class Employee {
 
     public void setSalary(int salary) {
         this.salary = salary;
+    }
+
+    public Map<String, String> getMapDepartments() {
+        return mapDepartments;
+    }
+
+    public void setMapDepartments(Map<String, String> mapDepartments) {
+        this.mapDepartments = mapDepartments;
     }
 
     @Override
